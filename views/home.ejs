@@ -1,0 +1,41 @@
+
+<%- include('partials/header') %>
+
+
+
+
+
+<h1><%= Title %></h1>
+
+<p> Welcome to Daily Journal - Your Personalized Daily Writing Companion<br><br>
+    Unlock the power of daily reflection, self-expression, and personal growth with Daily Journal. Our website is designed to be your trusted companion on the journey of self-discovery and improvement. Whether you're an experienced writer or just starting out, our platform provides you with the tools and inspiration you need to make journaling a daily habit.
+    <br>
+    <br>
+    At Daily Journal, we believe that journaling should be a personalized and tailored experience. That's why our platform offers a range of features to suit your unique needs and preferences. From customizable prompts to various writing formats, you have the freedom to create a journaling practice that resonates with you.
+</p>
+
+
+
+
+
+
+ <% posts.forEach(function(post){ %>
+    <h1><%= post.name %></h1>
+    
+   <p> 
+    
+    <%= post.content.substring(0,100) + "..." %>
+    <a href="/posts/<%= post.name %>">Read More </a>
+    
+</p>
+
+
+<% }); %>
+
+
+
+<a href="/compose"><button type="button" class="btn btn-dark">Compose</button></a>
+
+
+
+<%- include('partials/footer') %>
